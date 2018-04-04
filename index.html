@@ -13,15 +13,35 @@
         background: #23475B;
         color: white;
         padding: 32px 15px;
+        display: grid;
+        grid-template-columns: minmax(auto, 1024px);
+        justify-content: center;
+      }
+      .hero-container{
+        display: grid;
+        grid-template-columns: 70px 1fr 320px;
+        grid-template-areas: "badge title form" ". descripcion form" ". countdown form";
+        grid-gap: 10px;
+      }
+      .badge {
+        grid-area: badge;
+      }
+      .badge img{
+        width: 70px;
       }
       .title{
+        grid-area: title;
         font-size: 36px;
         font-weight: normal;
         margin: 0;
         display: flex;
         align-items: center;
       }
+      .descripcion{
+        grid-area: descripcion;
+      }
       .form{
+        grid-area: form;
         text-align: center;
         background: rgba(255, 255, 255, .9);
         padding: 1.5em;
@@ -48,34 +68,65 @@
         border-radius: 5px;
         border: none;
         font-size: 16px;
-        border-bottom: 5px solid #6D932B;
+        box-shadow: inset 0 -0.2em rgba(0,0,0,.2);
         display: inline-block;
+      }
+      .countdown{
+        grid-area: countdown;
+      }
+      .countdown p{
+        font-size: 20px;
+        text-align: center;
+        font-weight: 300;
+      }
+      .countdown span{
+        font-size: 33px;
+      }
+      .countdown span:after{
+        content: ":";
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .countdown span:last-child:after{
+        display: none;
+      }
+      p{
+        margin: 0;
+      }
+      @media screen and (max-width: 768px) {
+        .hero-container{
+          grid-template-columns: 70px 1fr;
+          grid-template-areas: "badge title" "descripcion descripcion " "form form" "countdown countdown";
+        }
       }
     </style>
   </head>
   <body>
     <div class="hero">
-      <div class="badge">
-        <img src="images/badge.png" alt="badge">
-      </div>
-      <h1 class="title">Curso de React.js</h1>
-      <div class="descripcion">
-        <p>React es una de las librerías más utilizadas hoy en dia para crear aplicaciones web. En este curso podrás dominar la creación de aplicaciones a través de un proyecto que te ayudará a explotar todas las capacidades de esta librería</p>
-      </div>
-      <form action="" class="form">
-        <p>Registrate a Platzi</p>
-        <input type="text" placeholder="Nombre">
-        <input type="email" placeholder="Correo Electrónico">
-        <button type="submit">Comienza Ahora</button>
-      </form>
-      <div class="countdown">
-        <p>Lanzamiento:</p>
-        <p>
-          <span>01d</span>
-          <span>03h</span>
-          <span>09m</span>
-          <span>05s</span>
-        </p>
+      <div class="hero-container">
+        <div class="badge">
+          <img src="images/badge.png" alt="badge">
+        </div>
+        <h1 class="title">Curso de React.js</h1>
+        <div class="descripcion">
+          <p>React es una de las librerías más utilizadas hoy en dia para crear aplicaciones web. En este curso podrás dominar la creación de aplicaciones a través de un proyecto que te ayudará a explotar todas las capacidades de esta librería</p>
+        </div>
+        <form action="" class="form">
+          <p>Registrate a Platzi</p>
+          <input type="text" placeholder="Nombre">
+          <input type="email" placeholder="Correo Electrónico">
+          <button type="submit">Comienza Ahora</button>
+        </form>
+        <div class="countdown">
+          <p>Lanzamiento:</p>
+          <p>
+            <span>01d</span>
+            <span>03h</span>
+            <span>09m</span>
+            <span>05s</span>
+          </p>
+        </div>
       </div>
     </div>
   </body>
