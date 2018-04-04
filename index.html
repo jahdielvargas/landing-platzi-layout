@@ -3,6 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>Platzi</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <style media="screen">
+      body{
+        font-family: 'Lato' , sans-serif;
+        margin: 0;
+      }
+      .hero{
+        background: #23475B;
+        color: white;
+        padding: 32px 15px;
+      }
+      .title{
+        font-size: 36px;
+        font-weight: normal;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+      .form{
+        text-align: center;
+        background: rgba(255, 255, 255, .9);
+        padding: 1.5em;
+        border-radius: 10px;
+      }
+      .form input{
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #DBDBE2;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+      .form p{
+        font-size: 20px;
+        color: #3A3B3F;
+        margin-bottom: 1em;
+      }
+      .form button{
+        background: #98CA3F;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        border-bottom: 5px solid #6D932B;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <div class="hero">
@@ -17,7 +66,7 @@
         <p>Registrate a Platzi</p>
         <input type="text" placeholder="Nombre">
         <input type="email" placeholder="Correo Electrónico">
-        <input type="submit" value="Comienza Ahora">
+        <button type="submit">Comienza Ahora</button>
       </form>
       <div class="countdown">
         <p>Lanzamiento:</p>
